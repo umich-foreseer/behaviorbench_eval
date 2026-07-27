@@ -211,8 +211,14 @@ class OpenAIModel:
         if self.reasoning_effort is not None:
             kwargs["reasoning_effort"] = self.reasoning_effort
         response = self.client.chat.completions.create(**kwargs)
-        content = response.choices[0].message.content or ""
-        reasoning = getattr(response.choices[0].message, "reasoning_content", None) or ""
+        message = response.choices[0].message
+        content = message.content or ""
+        # DeepSeek/GLM native APIs use "reasoning_content"; OpenRouter uses "reasoning"
+        reasoning = (
+            getattr(message, "reasoning_content", None)
+            or getattr(message, "reasoning", None)
+            or ""
+        )
         if reasoning:
             content = f"<think>\n{reasoning}\n</think>\n{content}"
         if not content:

@@ -238,7 +238,7 @@ class AzureBatchModel:
             if choices:
                 message = choices[0].get("message", {})
                 content = message.get("content", "")
-                reasoning = message.get("reasoning_content", "")
+                reasoning = message.get("reasoning_content") or message.get("reasoning") or ""
                 if reasoning:
                     content = f"<think>\n{reasoning}\n</think>\n{content}"
                 results[idx] = content or ""
