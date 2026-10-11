@@ -194,7 +194,7 @@ If you use BehaviorBench or BeFM in your work, please cite:
 ```bibtex
 @misc{huang2026behaviorbenchbenchmarkingfoundationmodels,
   title={BehaviorBench: Benchmarking Foundation Models for Behavioral Science Tasks},
-  author={Jin Huang and Yutong Xie and Wanli Song and Xingjian Zhang and Walter Yuan and Matthew O. Jackson and Qiaozhu Mei},
+  author={Jin Huang and Yutong Xie and Wanli Song and Xingjian Zhang and Owen Yang and Walter Yuan and Matthew O. Jackson and Qiaozhu Mei},
   year={2026},
   eprint={2606.24162},
   archivePrefix={arXiv},
